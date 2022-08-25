@@ -1,4 +1,4 @@
-Attribute VB_Name = "Module5"
+Attribute VB_Name = "Module2"
 Sub Copy_Paste_Cards_to_Sheets()
 
 
@@ -7,9 +7,8 @@ Sub Copy_Paste_Cards_to_Sheets()
     Dim x As Integer
     Application.ScreenUpdating = False
     ' Set numrows = number of rows of data.
-    NumRows = Range("A" & Rows.Count).End(xlUp).Row
-    'NumRows = Range("M1", Range("M1").End(xlDown)).Rows.Count
-    Debug.Print NumRows
+    NumRows = Range("A1", Range("A1").End(xlDown)).Rows.Count
+    'Debug.Print NumRows
     ' Select cell a1.
     'Range("A1").Select
     ' Establish "For" loop to loop "numrows" number of times.
@@ -33,9 +32,8 @@ Sub Copy_Paste_Cards_to_Sheets()
     Next
         
 'START OF RANGE LOOP
-    Sheets("ALT PHASE CARD DUMP").Select
+    Sheets("CARD DUMP").Select
     Dim SrchRng As Range, cel As Range
-    Range("A:Z").Interior.Color = RGB(171, 255, 171)
     Set SrchRng = Range("A1:P1000000")
     Start = 0
     end1 = 0
@@ -106,9 +104,9 @@ Sub Copy_Paste_Cards_to_Sheets()
 
 '    Next
     For j = 0 To (NumRows - 1)
-        Sheets("ALT PHASE CARD DUMP").Select
+        Sheets("CARD DUMP").Select
         Range(arr1(j * 2), arr1((j * 2) + 1)).Copy
-        Sheets("ALT " + arr(j + 1)).Select
+        Sheets(arr(j + 1)).Select
         'Call AddOutsideBorders(ActiveWorkbook.Worksheets(arr(j + 1)).Range("A3:S10"))
         Range("A1").Select
         'Range("W:Z").ColumnWidth = 14
@@ -418,9 +416,8 @@ Sub Copy_Paste_Cards_to_Sheets()
 
 
         Application.Goto Reference:=Sheets("SHEET CREATOR").Range("A1")
-        MsgBox ("Alternate Cards have now been copied to each sheet.")
+        MsgBox ("Base Bid Cards have now been copied to each sheet.")
 End Sub
-
 
 
 
