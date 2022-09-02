@@ -1,6 +1,5 @@
-Attribute VB_Name = "Module5"
-Sub Copy_Paste_Cards_to_Sheets()
-
+Sub Copy_Paste_AltCards_to_Sheets()
+'copy paste Alternate Cards
 
 'LOOP FOR CYCLING THROUGH SHEET NAMES
     Sheets("SHEET CREATOR").Select
